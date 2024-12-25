@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 2s; /* Smooth transition for background color change */
+        }
+        #factBox {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background: white;
+            width: 300px;
+        }
+        #fact {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button {
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="factBox">
+        <button onclick="generateFact()">Generate Fun Fact 🎲</button>
+        <div id="fact">Press the button to get a fun fact!</div>
+    </div>
+
+    <script>
+        const facts = [
+            "The universe is about 13.8 billion years old.",
+            "Black holes can bend light due to their intense gravity.",
+            "Neutron stars can spin at a rate of 600 rotations per second.",
+            "The largest known star, UY Scuti, is over 1,700 times larger than the sun.",
+            "If you fell into a black hole, you would experience spaghettification.",
+            "Venus rotates on its axis in the opposite direction to most planets in our solar system.",
+            "There are more trees on Earth than stars in the Milky Way galaxy.",
+            "Jupiter's Great Red Spot is a storm larger than Earth.",
+            "A day on Venus is longer than a year on Venus.",
+            "Mars has the tallest volcano in the solar system, Olympus Mons.",
+            "Enceladus, one of Saturn's moons, ejects water into space, which then falls as snow.",
+            "The footprints on the Moon will be there for 100 million years.",
+            "Mercury and Venus are the only two planets in our solar system without moons.",
+            "The edge of the observable universe is about 46 billion light years away.",
+            "The Hubble Space Telescope can see back in time to about 400 million years after the Big Bang.",
+            "Dark matter and dark energy make up about 95% of the universe.",
+            "The Voyager 1 spacecraft is the most distant human-made object from Earth.",
+            "A teaspoon of a neutron star would weigh about 6 billion tons.",
+            "The universe is expanding at an accelerating rate.",
+            "The concept of parallel universes suggests there could be other versions of reality."
+        ];
+
+        function generateFact() {
+            const factIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[factIndex];
+            document.body.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 75%)`; // Generates a random light color
+        }
+    </script>
+</body>
+</html>
