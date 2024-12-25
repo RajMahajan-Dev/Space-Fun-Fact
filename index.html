@@ -46,6 +46,7 @@
             position: absolute;
             width: 100px; /* Adjust size as needed */
             height: auto;
+            animation: float 5s ease-in-out infinite;
         }
         .image1 { top: 10%; left: 10%; }
         .image2 { top: 10%; right: 10%; }
@@ -55,21 +56,36 @@
         .image6 { top: 10%; right: 30%; }
         .image7 { bottom: 10%; left: 30%; }
         .image8 { bottom: 10%; right: 30%; }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(10px, -10px) scale(1.1); }
+        }
+        .credits {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 10px;
+            color: #FFFFFF;
+            text-shadow: 1px 1px 2px #000000;
+        }
     </style>
 </head>
 <body>
     <div id="factBox">
+        <h1>🌌 Universe Fun Factor 🌌</h1>
         <button onclick="generateFact()">Generate Fun Fact 🎲</button>
         <div id="fact">Press the button to get a fun fact!</div>
     </div>
-    <img src="https://img.freepik.com/premium-psd/purple-planet-isolated-transparent-background_84443-19177.jpg" class="image image1">
-    <img src="https://static.vecteezy.com/system/resources/previews/036/261/359/non_2x/ai-generated-mercury-planet-isolated-on-transparent-background-free-png.png" class="image image2">
-    <img src="https://i.pinimg.com/originals/f3/7b/52/f37b5273252024d60d9bb5c73bccd627.png" class="image image3">
-    <img src="https://png.pngtree.com/png-vector/20231001/ourmid/pngtree-cartoon-three-dimensional-3d-planet-planet-outer-space-model-decorative-pattern-png-image_10132301.png" class="image image4">
-    <img src="https://static.vecteezy.com/system/resources/previews/049/377/734/non_2x/purple-planet-on-transparent-background-cutout-png.png" class="image image5">
-    <img src="https://static.vecteezy.com/system/resources/previews/036/261/359/non_2x/ai-generated-mercury-planet-isolated-on-transparent-background-free-png.png" class="image image6">
-    <img src="https://png.pngtree.com/png-vector/20231001/ourmid/pngtree-cartoon-three-dimensional-3d-planet-planet-outer-space-model-decorative-pattern-png-image_10132301.png" class="image image7">
-    <img src="https://static.vecteezy.com/system/resources/previews/049/377/734/non_2x/purple-planet-on-transparent-background-cutout-png.png" class="image image8">
+    <div class="credits">Created by YourName</div>
+    <img src="https://example.com/image1.png" class="image image1">
+    <img src="https://example.com/image2.png" class="image image2">
+    <img src="https://example.com/image3.png" class="image image3">
+    <img src="https://example.com/image4.png" class="image image4">
+    <img src="https://example.com/image5.png" class="image image5">
+    <img src="https://example.com/image6.png" class="image image6">
+    <img src="https://example.com/image7.png" class="image image7">
+    <img src="https://example.com/image8.png" class="image image8">
 
     <script>
         const facts = [
