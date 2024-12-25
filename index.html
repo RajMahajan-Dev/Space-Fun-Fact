@@ -12,9 +12,10 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: url('https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed; 
+            background: url('https://example.com/planets-and-stars.png') no-repeat center center fixed;
             background-size: cover;
             transition: background-color 2s; /* Smooth transition for background color change */
+            position: relative; /* Needed for absolute positioning of images */
         }
         #factBox {
             text-align: center;
@@ -22,8 +23,8 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            width: 300px;
-            position: relative; /* Needed for positioning the credits */
+            width: 390px;
+            z-index: 10; /* Ensure it's above the images */
         }
         #fact {
             font-size: 16px;
@@ -41,27 +42,34 @@
         button:hover {
             background-color: #0056b3;
         }
-        h1 {
-            color: #FFFFFF;
-            text-shadow: 2px 2px 4px #000000;
-        }
-        .credits {
+        .image {
             position: absolute;
-            bottom: 5px;
-            right: 5px;
-            font-size: 10px;
-            color: #FFFFFF;
-            text-shadow: 1px 1px 2px #000000;
+            width: 100px; /* Adjust size as needed */
+            height: auto;
         }
+        .image1 { top: 10%; left: 10%; }
+        .image2 { top: 10%; right: 10%; }
+        .image3 { bottom: 10%; left: 10%; }
+        .image4 { bottom: 10%; right: 10%; }
+        .image5 { top: 10%; left: 30%; }
+        .image6 { top: 10%; right: 30%; }
+        .image7 { bottom: 10%; left: 30%; }
+        .image8 { bottom: 10%; right: 30%; }
     </style>
 </head>
 <body>
     <div id="factBox">
-        <h1>🌌 Universe Facts 🌌</h1>
         <button onclick="generateFact()">Generate Fun Fact 🎲</button>
         <div id="fact">Press the button to get a fun fact!</div>
-        <div class="credits">Created by Raj Mahajan</div>
     </div>
+    <img src="https://img.freepik.com/premium-psd/purple-planet-isolated-transparent-background_84443-19177.jpg" class="image image1">
+    <img src="https://static.vecteezy.com/system/resources/previews/036/261/359/non_2x/ai-generated-mercury-planet-isolated-on-transparent-background-free-png.png" class="image image2">
+    <img src="https://i.pinimg.com/originals/f3/7b/52/f37b5273252024d60d9bb5c73bccd627.png" class="image image3">
+    <img src="https://png.pngtree.com/png-vector/20231001/ourmid/pngtree-cartoon-three-dimensional-3d-planet-planet-outer-space-model-decorative-pattern-png-image_10132301.png" class="image image4">
+    <img src="https://static.vecteezy.com/system/resources/previews/049/377/734/non_2x/purple-planet-on-transparent-background-cutout-png.png" class="image image5">
+    <img src="https://static.vecteezy.com/system/resources/previews/036/261/359/non_2x/ai-generated-mercury-planet-isolated-on-transparent-background-free-png.png" class="image image6">
+    <img src="https://png.pngtree.com/png-vector/20231001/ourmid/pngtree-cartoon-three-dimensional-3d-planet-planet-outer-space-model-decorative-pattern-png-image_10132301.png" class="image image7">
+    <img src="https://static.vecteezy.com/system/resources/previews/049/377/734/non_2x/purple-planet-on-transparent-background-cutout-png.png" class="image image8">
 
     <script>
         const facts = [
